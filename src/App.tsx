@@ -1,5 +1,6 @@
 import './App.css'
 
+import { CloudRain, Drop, SpinnerGap, SunDim, ThermometerSimple, Wind } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 
 import axios from 'axios'
@@ -39,6 +40,7 @@ function App() {
 				<h1>Welcome to TypeWeather</h1>
 				<p>Choose a location to see the weather forecast</p>
 			</div>
+
 			{/* search input */}
 			<div className="search">
 				<input type="text" placeholder="Search location" value={location} onChange={handleLocationChange} />
@@ -49,19 +51,32 @@ function App() {
 					<div>
 						{weatherData.forecast.forecastday.map((day, index) => (
 							// weather card component
-							<div>
-								<div>
-									<h3>{weatherData.location.name}</h3>
-									<p>{day.date}</p>
+							<div className="card" key={index}>
+								<h2>{day.date}</h2>
+								<div className="icon">
+									<img src={day.day.condition.icon} alt="weather icon" />
 								</div>
-								<div>
-									<img src={day.day.condition.icon} alt={day.day.condition.text} />
-								</div>
-								<div>
-									<div>
-										{day.day.mintemp_c}°C / {day.day.maxtemp_c}°C
+								<div className="weather-info">
+									<div className="temp">
+										<ThermometerSimple />
+										<p>{day.day.avgtemp_c}°C</p>
 									</div>
-									<div>{day.day.condition.text}</div>
+									<div className="rain">
+										<CloudRain />
+										<p>{day.day.daily_chance_of_rain}%</p>
+									</div>
+									<div className="wind">
+										<Wind />
+										<p>{day.day.maxwind_kph}km/h</p>
+									</div>
+									<div className="humidity">
+										<Drop />
+										<p>{day.day.avghumidity}%</p>
+									</div>
+									<div className="uv">
+										<SunDim />
+										<p>{day.day.uv}</p>
+									</div>
 								</div>
 							</div>
 						))}

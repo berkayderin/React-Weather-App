@@ -1,11 +1,114 @@
-:root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 a {
-	text-decoration: inherit;
+	text-decoration: none;
+	color: inherit;
 }
 
-body {
-	margin: 0;
+:root {
+	/* Font ailesi */
+	--font-family-nunito: 'Nunito', sans-serif;
+
+	/* Font boyutları */
+	--font-size-heading-hg: 96px;
+	--font-size-heading-xl: 48px;
+	--font-size-heading-lg: 32px;
+	--font-size-heading-md: 20px;
+	--font-size-heading-sm: 16px;
+	--font-size-heading-xs: 14px;
+	--font-size-text-lg: 20px;
+	--font-size-text-md: 16px;
+	--font-size-text-sm: 14px;
+	--font-size-text-xs: 12px;
+
+	/* Satır yükseklikleri */
+	--line-height-heading: 100%;
+	--line-height-xl: 120%;
+	--line-height-lg-md-sm-xs: 140%;
+
+	/* Font ağırlıkları */
+	--font-weight-extra-bold: 800; /* ExtraBold için varsayılan 800 kabul edilmiştir */
+	--font-weight-bold: 700;
+	--font-weight-regular: 400;
+
+	/* Renk paleti */
+	--color-blue-light: #8fb2f5;
+	--color-gray-900: #13131a;
+	--color-gray-800: #16161f;
+	--color-gray-700: #1c1c27;
+	--color-gray-600: #22222f;
+	--color-gray-500: #3b3b54;
+	--color-gray-400: #7f7f98;
+	--color-gray-300: #ababc4;
+	--color-gray-200: #bfbfd4;
+	--color-gray-100: #fafafa;
+	--color-white: #ffffff;
+}
+
+/* Tipografi stilleri */
+body,
+button,
+input,
+textarea {
+	font-family: var(--font-family-nunito);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-lg-md-sm-xs);
+}
+
+h1 {
+	font-size: var(--font-size-heading-hg);
+	line-height: var(--line-height-heading);
+	font-weight: var(--font-weight-extra-bold);
+}
+
+h2 {
+	font-size: var(--font-size-heading-xl);
+	line-height: var(--line-height-xl);
+	font-weight: var(--font-weight-extra-bold);
+}
+
+h3 {
+	font-size: var(--font-size-heading-lg);
+	line-height: var(--line-height-lg-md-sm-xs);
+	font-weight: var(--font-weight-bold);
+}
+
+h4 {
+	font-size: var(--font-size-heading-md);
+	line-height: var(--line-height-lg-md-sm-xs);
+	font-weight: var(--font-weight-bold);
+}
+
+h5 {
+	font-size: var(--font-size-heading-sm);
+	line-height: var(--line-height-lg-md-sm-xs);
+	font-weight: var(--font-weight-bold);
+}
+
+h6 {
+	font-size: var(--font-size-heading-xs);
+	line-height: var(--line-height-lg-md-sm-xs);
+	font-weight: var(--font-weight-bold);
+}
+
+p {
+	font-size: var(--font-size-text-md);
+	line-height: var(--line-height-lg-md-sm-xs);
+}
+
+.small-text {
+	font-size: var(--font-size-text-sm);
+	line-height: var(--line-height-lg-md-sm-xs);
+}
+
+.tiny-text {
+	font-size: var(--font-size-text-xs);
+	line-height: var(--line-height-lg-md-sm-xs);
+	font-weight: var(--font-weight-bold);
 }
