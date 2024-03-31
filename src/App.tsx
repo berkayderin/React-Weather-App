@@ -1,5 +1,3 @@
-import './App.css'
-
 import { CloudRain, Drop, SpinnerGap, SunDim, ThermometerSimple, Wind } from '@phosphor-icons/react'
 import { useEffect, useState } from 'react'
 
